@@ -1,0 +1,28 @@
+
+
+q = int(input())
+w = int(input())
+e = int(input())
+
+day = e - w // (q - w)
+
+
+
+print(day)
+
+
+
+
+t = int(input())
+
+for _ in range(t):
+    k = int(input())            #층
+    n = int(input())            #호
+    zero = list(range(1,n+1))
+    apart = [zero]
+    for i in range(1,k+1):
+        floor = []
+        for j in range(1,n+1):
+            floor.append(sum(apart[i-1][:j]))
+        apart.append(floor)
+    print(apart[k][n-1])
